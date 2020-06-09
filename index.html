@@ -111,12 +111,27 @@
   <ul id="menu" class="main-menu menu">
         <li class="menu-item menu-item-home">
 
-    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+    <a href="/" rel="section"><i class="home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="th fa-fw"></i>分类</a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+    <a href="/archives/" rel="section"><i class="archive fa-fw"></i>归档</a>
 
   </li>
   </ul>
@@ -169,16 +184,10 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2020-06-09 11:00:49" itemprop="dateCreated datePublished" datetime="2020-06-09T11:00:49+08:00">2020-06-09</time>
+              <time title="创建时间：2020-06-09 11:00:49 / 修改时间：15:12:10" itemprop="dateCreated datePublished" datetime="2020-06-09T11:00:49+08:00">2020-06-09</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-08 20:32:12" itemprop="dateModified" datetime="2020-06-08T20:32:12+08:00">2020-06-08</time>
-              </span>
 
           
 
@@ -192,27 +201,15 @@
 
       
           <h1 id="Coded-Modulation-Capacity-Derivation"><a href="#Coded-Modulation-Capacity-Derivation" class="headerlink" title="Coded Modulation Capacity Derivation"></a>Coded Modulation Capacity Derivation</h1><hr>
-<h1 id="1-2-D-constellation-case"><a href="#1-2-D-constellation-case" class="headerlink" title="1. 2-D constellation case"></a>1. 2-D constellation case</h1><p>Suppose AWGN with $N_o=1$ for derivation simplicity.<br>$$<br>\begin{split}<br>C&amp;=I(X;Y)\<br>&amp;=\sum_{x\in X}\int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty}p(x,y)\log\frac{p(y\mid x)}{p(y)}dy_{I}dy_{Q}\<br>&amp;=\sum_{x\in X}p(x)\int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty}p(y\mid x)\log\frac{p(y\mid x)}{\sum_{x^\prime\in X}p(y\mid x^\prime)p(x^\prime)}dy_{I}dy_{Q}\<br>&amp;=\sum_{x\in X}p(x)\int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty}\frac{1}{\pi}e^{-|y-x|^2}\log\frac{e^{-|y-x|^2}}{\sum_{x^\prime\in X}e^{-|y-x^\prime|^2}p(x^\prime)}dy_{I}dy_{Q}\<br>&amp;=-\frac{1}{\pi}\sum_{x\in X}p(x)\int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty}e^{-|y-x|^2}\log\frac{\sum_{x^\prime\in X}e^{-|y-x^\prime|^2}p(x^\prime)}{e^{-|y-x|^2}}dy_{I}dy_{Q}\<br>&amp;=-\frac{1}{\pi}\sum_{x\in X}p(x)\int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty}e^{-t_I^2}e^{-t_Q^2}\log{\sum_{x^\prime\in X}e^{|t|^2-|x-x^\prime+t|^2}p(x^\prime)}dt_{I}dt_{Q}\<br>&amp;=-\frac{1}{\pi}\sum_{x\in X}p(x)\int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty}e^{-t_I^2}e^{-t_Q^2}\log{\sum_{x^\prime\in X}e^{|t_I|^2+|t_Q|^2-|x-x^\prime+t_I+i\cdot t_Q|^2}p(x^\prime)}dt_{I}dt_{Q}\<br>\end{split}\tag{1-1}<br>$$<br>When the constellation symbols are taken with equal probability, the above formula reduces to<br>$$<br>\begin{split}<br>C&amp;=I(X;Y)\<br>&amp;=m-\frac{1}{M\pi}\sum_{x\in X}\int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty}e^{-t_I^2}e^{-t_Q^2}\log{\sum_{x^\prime\in X}e^{|t_I|^2+|t_Q|^2-|x-x^\prime+t_I+i\cdot t_Q|^2}}dt_{I}dt_{Q}\<br>\end{split}\tag{1-2}<br>$$<br>where $m=\log_2M$ represents the number of coded bits per constellation symbol.</p>
-<blockquote>
-<p>Notice the calculation of average symbol energy when the constellation symbols are not taken with equal probability.</p>
-<p>$\bar{E_s}=\sum_{s\in \chi}p(s)|s|^2$</p>
-</blockquote>
-<hr>
-<h1 id="2-1-D-constellation-case"><a href="#2-1-D-constellation-case" class="headerlink" title="2. 1-D constellation case"></a>2. 1-D constellation case</h1><p>Suppose AWGN with $N_o=1$ for derivation simplicity.<br>$$<br>\begin{split}<br>C&amp;=I(X;Y)\<br>&amp;=\sum_{x\in X}\int_{-\infty}^{+\infty}p(x,y)\log\frac{p(y\mid x)}{p(y)}dy\<br>&amp;=\sum_{x\in X}p(x)\int_{-\infty}^{+\infty}p(y\mid x)\log\frac{p(y\mid x)}{\sum_{x^\prime\in X}p(y\mid x^\prime)p(x^\prime)}dy\<br>&amp;=\sum_{x\in X}p(x)\int_{-\infty}^{+\infty}\frac{1}{\sqrt{\pi}}e^{-|y-x|^2}\log\frac{e^{-|y-x|^2}}{\sum_{x^\prime\in X}e^{-|y-x^\prime|^2}p(x^\prime)}dy\<br>&amp;=-\frac{1}{\sqrt{\pi}}\sum_{x\in X}p(x)\int_{-\infty}^{+\infty}e^{-|y-x|^2}\log\frac{\sum_{x^\prime\in X}e^{-|y-x^\prime|^2}p(x^\prime)}{e^{-|y-x|^2}}dy\<br>&amp;=-\frac{1}{\sqrt{\pi}}\sum_{x\in X}p(x)\int_{-\infty}^{+\infty}e^{-|t|^2}\log{\sum_{x^\prime\in X}e^{|t|^2-|x-x^\prime+t|^2}p(x^\prime)}dt\<br>&amp;=-\frac{1}{\sqrt{\pi}}\sum_{x\in X}p(x)\int_{-\infty}^{+\infty}e^{-t^2}\log{\sum_{x^\prime\in X}e^{t^2-(x-x^\prime+t)^2}p(x^\prime)}dt\<br>\end{split}\tag{2-1}<br>$$<br>When the constellation symbols are taken with equal probability, the above formula reduces to<br>$$<br>\begin{split}<br>C&amp;=I(X;Y)\<br>&amp;=m-\frac{1}{M\sqrt{\pi}}\sum_{x\in X}\int_{-\infty}^{+\infty}e^{-t^2}\log{\sum_{x^\prime\in X}e^{t^2-(x-x^\prime+t)^2}}dt\<br>\end{split}\tag{2-2}<br>$$<br>where $m=\log_2M$ represents the number of coded bits per constellation symbol.</p>
-<blockquote>
-<p>Notice the calculation of average symbol energy when the constellation symbols are not taken with equal probability.</p>
-<p>$\bar{E_s}=\sum_{s\in \chi}p(s)|s|^2$</p>
-</blockquote>
-<hr>
-<h1 id="3-1-D-case-is-a-special-2-D-case"><a href="#3-1-D-case-is-a-special-2-D-case" class="headerlink" title="3. 1-D case is a special 2-D case"></a>3. 1-D case is a special 2-D case</h1><p>$$<br>\begin{split}<br>C&amp;=I(X;Y)\<br>&amp;=-\frac{1}{\pi}\sum_{x\in X}p(x)\int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty}e^{-t_I^2}e^{-t_Q^2}\log{\sum_{x^\prime\in X}e^{|t_I|^2+|t_Q|^2-|x-x^\prime+t_I+i\cdot t_Q|^2}p(x^\prime)}dt_{I}dt_{Q}\<br>\end{split}\tag{3-1}<br>$$</p>
-<p>When the constellation is 1-D, i.e. $x$ and $x^\prime$ is real, equation (3-1) can be rearranged.<br>$$<br>\begin{split}<br>C&amp;=I(X;Y)\<br>&amp;=-\frac{1}{\pi}\sum_{x\in X}p(x)\int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty}e^{-t_I^2}e^{-t_Q^2}\log{\sum_{x^\prime\in X}e^{|t_I|^2+|t_Q|^2-|x-x^\prime+t_I|^2+|i\cdot t_Q|^2}p(x^\prime)}dt_{I}dt_{Q}\</p>
-<p>&amp;=-\frac{1}{\pi}\sum_{x\in X}p(x)\int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty}e^{-t_I^2}e^{-t_Q^2}\log{\sum_{x^\prime\in X}e^{|t_I|^2-|x-x^\prime+t_I|^2}p(x^\prime)}dt_{I}dt_{Q}\</p>
-<p>&amp;=-\frac{1}{\sqrt{\pi}}\sum_{x\in X}p(x)\int_{-\infty}^{+\infty}e^{-t_I^2}\log{\sum_{x^\prime\in X}e^{|t_I|^2-|x-x^\prime+t_I|^2}p(x^\prime)}dt_{I}\int_{-\infty}^{+\infty}\frac{1}{\sqrt{\pi}}e^{-t_Q^2}dt_{Q}\</p>
-<p>&amp;=-\frac{1}{\sqrt{\pi}}\sum_{x\in X}p(x)\int_{-\infty}^{+\infty}e^{-t_I^2}\log{\sum_{x^\prime\in X}e^{|t_I|^2-|x-x^\prime+t_I|^2}p(x^\prime)}dt_{I}<br>\end{split}\tag{3-2}<br>$$<br>Equation (3-2) is just an equivalent form of equation (2-1).</p>
-<hr>
-<h1 id="4-Relationship-between-several-form-of-signal-to-noise-ratio"><a href="#4-Relationship-between-several-form-of-signal-to-noise-ratio" class="headerlink" title="4. Relationship between several form of signal to noise ratio"></a>4. Relationship between several form of signal to noise ratio</h1><p>$$<br>SNR=\frac{\sigma^2_s}{\sigma_n^2}=\begin{cases}<br>\frac{E_s}{N_o}\cdot2 &amp;\quad\quad \text{1-D constellation}\<br>\<br>\<br>\frac{E_s}{N_o} &amp;\quad\quad \text{2-D constellation}\<br>\end{cases}\tag{4-1}<br>$$</p>
-<p>$$<br>\frac{E_s}{N_o}=\frac{E_b*\rho}{N_o}<br>\tag{4-2}<br>$$<br>where $\rho$ is the data rate in bits per symbol (or channel use) and<br>$$<br>\rho=m\cdot R<br>\tag{4-3}<br>$$<br>where $m$ is the number of coded bits per constellation symbol and $R$ is the code rate of FEC.</p>
-
+<h1 id="1-2-D-constellation-case"><a href="#1-2-D-constellation-case" class="headerlink" title="1. 2-D constellation case"></a>1. 2-D constellation case</h1><p>Suppose AWGN with $N_o=1$ for derivation simplicity.<br>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/06/09/Derivation%20of%20Channel%20Capacity/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -271,16 +268,12 @@
       
           <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
 <p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
 <h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
 <p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
 <h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
 <p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
 <h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
 
       
@@ -390,18 +383,6 @@
 
         
 
-<div class="copyright">
-  
-  &copy; 
-  <span itemprop="copyrightYear">2020</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Walter Mitty</span>
-</div>
-  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
-  </div>
-
         
 
 
@@ -448,6 +429,8 @@
 
 
 
+
+  
 
   
 
