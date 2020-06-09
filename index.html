@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-Derivation of Channel Capacity" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/06/09/Derivation%20of%20Channel%20Capacity/" class="article-date">
+  <time datetime="2020-06-09T03:00:49.002Z" itemprop="datePublished">2020-06-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/06/09/Derivation%20of%20Channel%20Capacity/">Derivation of Channel Capacity</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Coded-Modulation-Capacity-Derivation"><a href="#Coded-Modulation-Capacity-Derivation" class="headerlink" title="Coded Modulation Capacity Derivation"></a>Coded Modulation Capacity Derivation</h1><hr>
+<h1 id="1-2-D-constellation-case"><a href="#1-2-D-constellation-case" class="headerlink" title="1. 2-D constellation case"></a>1. 2-D constellation case</h1><p>Suppose AWGN with $N_o=1$ for derivation simplicity.<br>$$<br>\begin{split}<br>C&amp;=I(X;Y)\<br>&amp;=\sum_{x\in X}\int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty}p(x,y)\log\frac{p(y\mid x)}{p(y)}dy_{I}dy_{Q}\<br>&amp;=\sum_{x\in X}p(x)\int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty}p(y\mid x)\log\frac{p(y\mid x)}{\sum_{x^\prime\in X}p(y\mid x^\prime)p(x^\prime)}dy_{I}dy_{Q}\<br>&amp;=\sum_{x\in X}p(x)\int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty}\frac{1}{\pi}e^{-|y-x|^2}\log\frac{e^{-|y-x|^2}}{\sum_{x^\prime\in X}e^{-|y-x^\prime|^2}p(x^\prime)}dy_{I}dy_{Q}\<br>&amp;=-\frac{1}{\pi}\sum_{x\in X}p(x)\int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty}e^{-|y-x|^2}\log\frac{\sum_{x^\prime\in X}e^{-|y-x^\prime|^2}p(x^\prime)}{e^{-|y-x|^2}}dy_{I}dy_{Q}\<br>&amp;=-\frac{1}{\pi}\sum_{x\in X}p(x)\int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty}e^{-t_I^2}e^{-t_Q^2}\log{\sum_{x^\prime\in X}e^{|t|^2-|x-x^\prime+t|^2}p(x^\prime)}dt_{I}dt_{Q}\<br>&amp;=-\frac{1}{\pi}\sum_{x\in X}p(x)\int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty}e^{-t_I^2}e^{-t_Q^2}\log{\sum_{x^\prime\in X}e^{|t_I|^2+|t_Q|^2-|x-x^\prime+t_I+i\cdot t_Q|^2}p(x^\prime)}dt_{I}dt_{Q}\<br>\end{split}\tag{1-1}<br>$$<br>When the constellation symbols are taken with equal probability, the above formula reduces to<br>$$<br>\begin{split}<br>C&amp;=I(X;Y)\<br>&amp;=m-\frac{1}{M\pi}\sum_{x\in X}\int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty}e^{-t_I^2}e^{-t_Q^2}\log{\sum_{x^\prime\in X}e^{|t_I|^2+|t_Q|^2-|x-x^\prime+t_I+i\cdot t_Q|^2}}dt_{I}dt_{Q}\<br>\end{split}\tag{1-2}<br>$$<br>where $m=\log_2M$ represents the number of coded bits per constellation symbol.</p>
+<blockquote>
+<p>Notice the calculation of average symbol energy when the constellation symbols are not taken with equal probability.</p>
+<p>$\bar{E_s}=\sum_{s\in \chi}p(s)|s|^2$</p>
+</blockquote>
+<hr>
+<h1 id="2-1-D-constellation-case"><a href="#2-1-D-constellation-case" class="headerlink" title="2. 1-D constellation case"></a>2. 1-D constellation case</h1><p>Suppose AWGN with $N_o=1$ for derivation simplicity.<br>$$<br>\begin{split}<br>C&amp;=I(X;Y)\<br>&amp;=\sum_{x\in X}\int_{-\infty}^{+\infty}p(x,y)\log\frac{p(y\mid x)}{p(y)}dy\<br>&amp;=\sum_{x\in X}p(x)\int_{-\infty}^{+\infty}p(y\mid x)\log\frac{p(y\mid x)}{\sum_{x^\prime\in X}p(y\mid x^\prime)p(x^\prime)}dy\<br>&amp;=\sum_{x\in X}p(x)\int_{-\infty}^{+\infty}\frac{1}{\sqrt{\pi}}e^{-|y-x|^2}\log\frac{e^{-|y-x|^2}}{\sum_{x^\prime\in X}e^{-|y-x^\prime|^2}p(x^\prime)}dy\<br>&amp;=-\frac{1}{\sqrt{\pi}}\sum_{x\in X}p(x)\int_{-\infty}^{+\infty}e^{-|y-x|^2}\log\frac{\sum_{x^\prime\in X}e^{-|y-x^\prime|^2}p(x^\prime)}{e^{-|y-x|^2}}dy\<br>&amp;=-\frac{1}{\sqrt{\pi}}\sum_{x\in X}p(x)\int_{-\infty}^{+\infty}e^{-|t|^2}\log{\sum_{x^\prime\in X}e^{|t|^2-|x-x^\prime+t|^2}p(x^\prime)}dt\<br>&amp;=-\frac{1}{\sqrt{\pi}}\sum_{x\in X}p(x)\int_{-\infty}^{+\infty}e^{-t^2}\log{\sum_{x^\prime\in X}e^{t^2-(x-x^\prime+t)^2}p(x^\prime)}dt\<br>\end{split}\tag{2-1}<br>$$<br>When the constellation symbols are taken with equal probability, the above formula reduces to<br>$$<br>\begin{split}<br>C&amp;=I(X;Y)\<br>&amp;=m-\frac{1}{M\sqrt{\pi}}\sum_{x\in X}\int_{-\infty}^{+\infty}e^{-t^2}\log{\sum_{x^\prime\in X}e^{t^2-(x-x^\prime+t)^2}}dt\<br>\end{split}\tag{2-2}<br>$$<br>where $m=\log_2M$ represents the number of coded bits per constellation symbol.</p>
+<blockquote>
+<p>Notice the calculation of average symbol energy when the constellation symbols are not taken with equal probability.</p>
+<p>$\bar{E_s}=\sum_{s\in \chi}p(s)|s|^2$</p>
+</blockquote>
+<hr>
+<h1 id="3-1-D-case-is-a-special-2-D-case"><a href="#3-1-D-case-is-a-special-2-D-case" class="headerlink" title="3. 1-D case is a special 2-D case"></a>3. 1-D case is a special 2-D case</h1><p>$$<br>\begin{split}<br>C&amp;=I(X;Y)\<br>&amp;=-\frac{1}{\pi}\sum_{x\in X}p(x)\int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty}e^{-t_I^2}e^{-t_Q^2}\log{\sum_{x^\prime\in X}e^{|t_I|^2+|t_Q|^2-|x-x^\prime+t_I+i\cdot t_Q|^2}p(x^\prime)}dt_{I}dt_{Q}\<br>\end{split}\tag{3-1}<br>$$</p>
+<p>When the constellation is 1-D, i.e. $x$ and $x^\prime$ is real, equation (3-1) can be rearranged.<br>$$<br>\begin{split}<br>C&amp;=I(X;Y)\<br>&amp;=-\frac{1}{\pi}\sum_{x\in X}p(x)\int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty}e^{-t_I^2}e^{-t_Q^2}\log{\sum_{x^\prime\in X}e^{|t_I|^2+|t_Q|^2-|x-x^\prime+t_I|^2+|i\cdot t_Q|^2}p(x^\prime)}dt_{I}dt_{Q}\</p>
+<p>&amp;=-\frac{1}{\pi}\sum_{x\in X}p(x)\int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty}e^{-t_I^2}e^{-t_Q^2}\log{\sum_{x^\prime\in X}e^{|t_I|^2-|x-x^\prime+t_I|^2}p(x^\prime)}dt_{I}dt_{Q}\</p>
+<p>&amp;=-\frac{1}{\sqrt{\pi}}\sum_{x\in X}p(x)\int_{-\infty}^{+\infty}e^{-t_I^2}\log{\sum_{x^\prime\in X}e^{|t_I|^2-|x-x^\prime+t_I|^2}p(x^\prime)}dt_{I}\int_{-\infty}^{+\infty}\frac{1}{\sqrt{\pi}}e^{-t_Q^2}dt_{Q}\</p>
+<p>&amp;=-\frac{1}{\sqrt{\pi}}\sum_{x\in X}p(x)\int_{-\infty}^{+\infty}e^{-t_I^2}\log{\sum_{x^\prime\in X}e^{|t_I|^2-|x-x^\prime+t_I|^2}p(x^\prime)}dt_{I}<br>\end{split}\tag{3-2}<br>$$<br>Equation (3-2) is just an equivalent form of equation (2-1).</p>
+<hr>
+<h1 id="4-Relationship-between-several-form-of-signal-to-noise-ratio"><a href="#4-Relationship-between-several-form-of-signal-to-noise-ratio" class="headerlink" title="4. Relationship between several form of signal to noise ratio"></a>4. Relationship between several form of signal to noise ratio</h1><p>$$<br>SNR=\frac{\sigma^2_s}{\sigma_n^2}=\begin{cases}<br>\frac{E_s}{N_o}\cdot2 &amp;\quad\quad \text{1-D constellation}\<br>\<br>\<br>\frac{E_s}{N_o} &amp;\quad\quad \text{2-D constellation}\<br>\end{cases}\tag{4-1}<br>$$</p>
+<p>$$<br>\frac{E_s}{N_o}=\frac{E_b*\rho}{N_o}<br>\tag{4-2}<br>$$<br>where $\rho$ is the data rate in bits per symbol (or channel use) and<br>$$<br>\rho=m\cdot R<br>\tag{4-3}<br>$$<br>where $m$ is the number of coded bits per constellation symbol and $R$ is the code rate of FEC.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/06/09/Derivation%20of%20Channel%20Capacity/" data-id="ckb7c8j5x000128ma6gbicrjd" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/06/09/hello-world/" class="article-date">
+  <time datetime="2020-06-09T02:39:34.534Z" itemprop="datePublished">2020-06-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/06/09/hello-world/">Hello World</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/06/09/hello-world/" data-id="ckb7c8j5s000028ma9nw80i50" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/06/09/Derivation%20of%20Channel%20Capacity/">Derivation of Channel Capacity</a>
+          </li>
+        
+          <li>
+            <a href="/2020/06/09/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
