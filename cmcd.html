@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="He, The Secret Life of Walter Mitty">
+    <meta name="keywords" content="Coded Modulation Capacity Derivation, The Secret Life of Walter Mitty">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>He | The Secret Life of Walter Mitty</title>
+    <title>Coded Modulation Capacity Derivation | The Secret Life of Walter Mitty</title>
     <link rel="icon" type="image/jpeg" href="/w-mitty.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -198,15 +198,28 @@
 </header>
 
     
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = 'f1fff348b376273c884706f4abb553e70c50a16ebca0047c1c20ad9137c5844b';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">He</h1>
+                    <h1 class="description center-align post-title">Coded Modulation Capacity Derivation</h1>
                 </div>
             </div>
         </div>
@@ -228,8 +241,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/hello/">
-                                <span class="chip bg-color">hello</span>
+                            <a href="/tags/Info-Theory/">
+                                <span class="chip bg-color">Info. Theory</span>
                             </a>
                         
                     </div>
@@ -240,8 +253,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/hi/" class="post-category">
-                                hi
+                            <a href="/categories/Info-Theory/" class="post-category">
+                                Info. Theory
                             </a>
                         
                     </div>
@@ -260,21 +273,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-06-09
+                    2020-06-10
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    79
+                    1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    6 分
                 </div>
                 
 
@@ -284,20 +297,69 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="hhh"><a href="#hhh" class="headerlink" title="hhh"></a>hhh</h1><p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class=" language-lang-bash"><code class="language-lang-bash">$ hexo new "My New Post"
-</code></pre>
-<p>$a^2+b^2=c^2$</p>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class=" language-lang-bash"><code class="language-lang-bash">$ hexo server
-</code></pre>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class=" language-lang-bash"><code class="language-lang-bash">$ hexo generate
-</code></pre>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class=" language-lang-bash"><code class="language-lang-bash">$ hexo deploy
-</code></pre>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+                <h2 id="2-D-constellation-case"><a href="#2-D-constellation-case" class="headerlink" title="2-D constellation case"></a>2-D constellation case</h2><p>Suppose AWGN with $N_o=1$ for derivation simplicity.</p>
+<script type="math/tex; mode=display">
+\begin{split}
+C&=I(X;Y)\\
+&=\sum_{x\in X}\int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty}p(x,y)\log\frac{p(y\mid x)}{p(y)}dy_{I}dy_{Q}\\
+&=\sum_{x\in X}p(x)\int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty}p(y\mid x)\log\frac{p(y\mid x)}{\sum_{x^\prime\in X}p(y\mid x^\prime)p(x^\prime)}dy_{I}dy_{Q}\\
+&=\sum_{x\in X}p(x)\int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty}\frac{1}{\pi}e^{-|y-x|^2}\log\frac{e^{-|y-x|^2}}{\sum_{x^\prime\in X}e^{-|y-x^\prime|^2}p(x^\prime)}dy_{I}dy_{Q}\\
+&=-\frac{1}{\pi}\sum_{x\in X}p(x)\int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty}e^{-|y-x|^2}\log\frac{\sum_{x^\prime\in X}e^{-|y-x^\prime|^2}p(x^\prime)}{e^{-|y-x|^2}}dy_{I}dy_{Q}\\
+&=-\frac{1}{\pi}\sum_{x\in X}p(x)\int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty}e^{-t_I^2}e^{-t_Q^2}\log{\sum_{x^\prime\in X}e^{|t|^2-|x-x^\prime+t|^2}p(x^\prime)}dt_{I}dt_{Q}\\
+&=-\frac{1}{\pi}\sum_{x\in X}p(x)\int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty}e^{-t_I^2}e^{-t_Q^2}\log{\sum_{x^\prime\in X}e^{|t_I|^2+|t_Q|^2-|x-x^\prime+t_I+i\cdot t_Q|^2}p(x^\prime)}dt_{I}dt_{Q}\\
+\end{split}\tag{1-1}</script><p>When the constellation symbols are taken with equal probability, the above formula reduces to</p>
+<script type="math/tex; mode=display">
+\begin{split}
+C&=I(X;Y)\\
+&=m-\frac{1}{M\pi}\sum_{x\in X}\int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty}e^{-t_I^2}e^{-t_Q^2}\log{\sum_{x^\prime\in X}e^{|t_I|^2+|t_Q|^2-|x-x^\prime+t_I+i\cdot t_Q|^2}}dt_{I}dt_{Q}\\
+\end{split}\tag{1-2}</script><p>where $m=\log_2M$ represents the number of coded bits per constellation symbol.</p>
+<p>Notice the calculation of average symbol energy when the constellation symbols are not taken with equal probability.</p>
+<script type="math/tex; mode=display">
+\bar{E_s}=\sum_{s\in \chi}p(s)|s|^2
+\tag{1-3}</script><h2 id="1-D-constellation-case"><a href="#1-D-constellation-case" class="headerlink" title="1-D constellation case"></a>1-D constellation case</h2><p>Suppose AWGN with $N_o=1$ for derivation simplicity.</p>
+<script type="math/tex; mode=display">
+\begin{split}
+C&=I(X;Y)\\
+&=\sum_{x\in X}\int_{-\infty}^{+\infty}p(x,y)\log\frac{p(y\mid x)}{p(y)}dy\\
+&=\sum_{x\in X}p(x)\int_{-\infty}^{+\infty}p(y\mid x)\log\frac{p(y\mid x)}{\sum_{x^\prime\in X}p(y\mid x^\prime)p(x^\prime)}dy\\
+&=\sum_{x\in X}p(x)\int_{-\infty}^{+\infty}\frac{1}{\sqrt{\pi}}e^{-|y-x|^2}\log\frac{e^{-|y-x|^2}}{\sum_{x^\prime\in X}e^{-|y-x^\prime|^2}p(x^\prime)}dy\\
+&=-\frac{1}{\sqrt{\pi}}\sum_{x\in X}p(x)\int_{-\infty}^{+\infty}e^{-|y-x|^2}\log\frac{\sum_{x^\prime\in X}e^{-|y-x^\prime|^2}p(x^\prime)}{e^{-|y-x|^2}}dy\\
+&=-\frac{1}{\sqrt{\pi}}\sum_{x\in X}p(x)\int_{-\infty}^{+\infty}e^{-|t|^2}\log{\sum_{x^\prime\in X}e^{|t|^2-|x-x^\prime+t|^2}p(x^\prime)}dt\\
+&=-\frac{1}{\sqrt{\pi}}\sum_{x\in X}p(x)\int_{-\infty}^{+\infty}e^{-t^2}\log{\sum_{x^\prime\in X}e^{t^2-(x-x^\prime+t)^2}p(x^\prime)}dt\\
+\end{split}\tag{2-1}</script><p>When the constellation symbols are taken with equal probability, the above formula reduces to</p>
+<script type="math/tex; mode=display">
+\begin{split}
+C&=I(X;Y)\\
+&=m-\frac{1}{M\sqrt{\pi}}\sum_{x\in X}\int_{-\infty}^{+\infty}e^{-t^2}\log{\sum_{x^\prime\in X}e^{t^2-(x-x^\prime+t)^2}}dt\\
+\end{split}\tag{2-2}</script><p>where $m=\log_2M$ represents the number of coded bits per constellation symbol.</p>
+<h2 id="1-D-case-is-a-special-2-D-case"><a href="#1-D-case-is-a-special-2-D-case" class="headerlink" title="1-D case is a special 2-D case"></a>1-D case is a special 2-D case</h2><script type="math/tex; mode=display">
+\begin{split}
+C&=I(X;Y)\\
+&=-\frac{1}{\pi}\sum_{x\in X}p(x)\int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty}e^{-t_I^2}e^{-t_Q^2}\log{\sum_{x^\prime\in X}e^{|t_I|^2+|t_Q|^2-|x-x^\prime+t_I+i\cdot t_Q|^2}p(x^\prime)}dt_{I}dt_{Q}\\
+\end{split}\tag{3-1}</script><p>When the constellation is 1-D, i.e. $x$ and $x^\prime$ is real, equation <code>(3-1)</code> can be rearranged.</p>
+<script type="math/tex; mode=display">
+\begin{split}
+C&=I(X;Y)\\
+&=-\frac{1}{\pi}\sum_{x\in X}p(x)\int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty}e^{-t_I^2}e^{-t_Q^2}\log{\sum_{x^\prime\in X}e^{|t_I|^2+|t_Q|^2-|x-x^\prime+t_I|^2+|i\cdot t_Q|^2}p(x^\prime)}dt_{I}dt_{Q}\\
+
+&=-\frac{1}{\pi}\sum_{x\in X}p(x)\int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty}e^{-t_I^2}e^{-t_Q^2}\log{\sum_{x^\prime\in X}e^{|t_I|^2-|x-x^\prime+t_I|^2}p(x^\prime)}dt_{I}dt_{Q}\\
+
+&=-\frac{1}{\sqrt{\pi}}\sum_{x\in X}p(x)\int_{-\infty}^{+\infty}e^{-t_I^2}\log{\sum_{x^\prime\in X}e^{|t_I|^2-|x-x^\prime+t_I|^2}p(x^\prime)}dt_{I}\int_{-\infty}^{+\infty}\frac{1}{\sqrt{\pi}}e^{-t_Q^2}dt_{Q}\\
+
+&=-\frac{1}{\sqrt{\pi}}\sum_{x\in X}p(x)\int_{-\infty}^{+\infty}e^{-t_I^2}\log{\sum_{x^\prime\in X}e^{|t_I|^2-|x-x^\prime+t_I|^2}p(x^\prime)}dt_{I}
+\end{split}\tag{3-2}</script><p>Equation <code>(3-2)</code> is just an equivalent form of equation <code>(2-1)</code>.</p>
+<h2 id="Relationship-between-several-form-of-signal-to-noise-ratio"><a href="#Relationship-between-several-form-of-signal-to-noise-ratio" class="headerlink" title="Relationship between several form of signal to noise ratio"></a>Relationship between several form of signal to noise ratio</h2><script type="math/tex; mode=display">
+SNR=\frac{\sigma^2_s}{\sigma_n^2}=\begin{cases}
+\frac{E_s}{N_o}\cdot2 &\quad\quad \text{1-D constellation}\\
+\\
+\\
+\frac{E_s}{N_o} &\quad\quad \text{2-D constellation}\\
+\end{cases}\tag{4-1}</script><script type="math/tex; mode=display">
+\frac{E_s}{N_o}=\frac{E_b*\rho}{N_o}
+\tag{4-2}</script><p>where $\rho$ is the data rate in bits per symbol or channel use and</p>
+<script type="math/tex; mode=display">
+\rho=m\cdot R
+\tag{4-3}</script><p>where $m$ is the number of coded bits per constellation symbol and $R$ is the code rate.</p>
 
             </div>
             <hr/>
@@ -323,7 +385,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://w-mitty.github.io/undefined.html">https://w-mitty.github.io/undefined.html</a>
+                    <a href="https://w-mitty.github.io/cmcd.html">https://w-mitty.github.io/cmcd.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -361,8 +423,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/hello/">
-                                    <span class="chip bg-color">hello</span>
+                                <a href="/tags/Info-Theory/">
+                                    <span class="chip bg-color">Info. Theory</span>
                                 </a>
                             
                         </div>
@@ -401,11 +463,12 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/cm-cap.html">
+                <a href="/cmcd.html">
                     <div class="card-image">
                         
                         
@@ -417,30 +480,31 @@
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Capacity calculation
+                            Channel Capacity calculation
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-06-09
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-09
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Information-Theory/" class="post-category">
-                                    Information Theory
+                            <a href="/categories/Info-Theory/" class="post-category">
+                                    Info. Theory
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Information-Theory/">
-                        <span class="chip bg-color">Information Theory</span>
+                    <a href="/tags/Info-Theory/">
+                        <span class="chip bg-color">Info. Theory</span>
                     </a>
                     
                 </div>
@@ -454,19 +518,19 @@
                 本篇&nbsp;<i class="far fa-dot-circle"></i>
             </div>
             <div class="card">
-                <a href="/undefined.html">
+                <a href="/cmcd.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="He">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="Coded Modulation Capacity Derivation">
                         
-                        <span class="card-title">He</span>
+                        <span class="card-title">Coded Modulation Capacity Derivation</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            hhh
+                            Channel Capacity calculation
                         
                     </div>
                     <div class="publish-info">
@@ -477,8 +541,8 @@
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/hi/" class="post-category">
-                                    hi
+                            <a href="/categories/Info-Theory/" class="post-category">
+                                    Info. Theory
                                 </a>
                             
                             
@@ -489,8 +553,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/hello/">
-                        <span class="chip bg-color">hello</span>
+                    <a href="/tags/Info-Theory/">
+                        <span class="chip bg-color">Info. Theory</span>
                     </a>
                     
                 </div>
