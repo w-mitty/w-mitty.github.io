@@ -4,6 +4,56 @@
   
     
     <entry>
+      <title>English Words 1</title>
+      <link href="//ewd1.html"/>
+      <url>//ewd1.html</url>
+      
+        <content type="html"><![CDATA[<h3 id="nasal"><a href="#nasal" class="headerlink" title="nasal"></a>nasal</h3><ul><li>adj. 鼻的；带有鼻音的</li></ul><h3 id="mite"><a href="#mite" class="headerlink" title="mite"></a>mite</h3><ul><li>螨虫</li><li>a mite ~</li><li>poor little mite</li></ul><h3 id=""><a href="#" class="headerlink" title=" "></a> </h3>]]></content>
+      
+      
+      <categories>
+          
+          <category> English </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> English Vocabulary </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>English Writing 1</title>
+      <link href="//ew1.html"/>
+      <url>//ew1.html</url>
+      
+        <content type="html"><![CDATA[<h2 id=""><a href="#" class="headerlink" title=" "></a> </h2>]]></content>
+      
+      
+      <categories>
+          
+          <category> English </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> English Writing </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Coded Modulation Capacity Derivation</title>
       <link href="//cmcd.html"/>
       <url>//cmcd.html</url>
@@ -13,14 +63,14 @@
       
       <categories>
           
-          <category> Info. Theory </category>
+          <category> Comm </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> Info. Theory </tag>
+            <tag> Channel Capacity </tag>
             
         </tags>
       
