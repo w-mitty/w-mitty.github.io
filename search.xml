@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>MIMO Basics</title>
+      <link href="//mimo-basics.html"/>
+      <url>//mimo-basics.html</url>
+      
+        <content type="html"><![CDATA[<h4 id="Transmit-Diversity-vs-Receive-Diversity"><a href="#Transmit-Diversity-vs-Receive-Diversity" class="headerlink" title="Transmit Diversity vs. Receive Diversity"></a>Transmit Diversity vs. Receive Diversity</h4><p>Receive diversity is achieved by configuring multiple antennas in receiver side. Each receiver antenna receives an <code>independently faded copy</code> of the transmitted symbol. </p><p>Then <code>combining technique</code> is employed to get an estimated  version of the original symbol. There are several kinds of combining method, like <code>selective combining (SC)</code>, <code>equal gain combining (EGC)</code>, <code>maximum ratio combining (MRC)</code>.</p><p>Suppose the number of receive antennas and transmit antennas is $N_R$ and $1$ respectively. Then the received signal vector in receiver side is</p><script type="math/tex; mode=display">\mathbf{y}=\mathbf{h}\cdot x\tag{1}</script><p>where  $\mathbf{y}=(y_1, y_2, …, y_{N_R})^T$  with the entry $y_i$ representing received value of the i-th receive antenna and $\mathbf{h}=(h_1, h_2, …, h_{N_R})^T$ is channel fading coefficients vector.</p><p>Receive diversity can be easily implemented and optimal performance will be obtained with <code>maximum ratio combining</code>. It is suited for the uplink scenarios, i. e. equip the base station tower with multiple antennas. Obviously, multiple antennas need much more space to configure and require more powerful computing  unit to do the complicated receive algorithms which means more cost.</p><p>So what about downlink scenario? Mobile terminals is always small and cheap, and it’s not practical to equip mobile terminals (like smart phones) with multiple antennas. To cope with this, maybe we can configure multiple antennas in the transmitter side instead, and transmit the same symbol from these antennas.</p><p>Someone may immediately come up with an easy idea that utilises $N_T$ transmit antennas transmit the same symbols  simultaneously, but simple mathematics will show that there’s no diversity here. Assume symbols $x$ is transmitted and channel fading coefficients vector is $\mathbf{h}=\left(h_1, h_2, …, h_{N_T}\right)$, then the received signal is</p><script type="math/tex; mode=display">y=\left(\sum_{i=1}^{N_T}h_i\right)\cdot x=h\cdot x\tag{2}</script><p>Apparently, equation <code>(2)</code> is equivalent to the scenario that employs one transmit antenna only. Consequently, no diversity here. On a deeper level, transmit diversity requires both space dimension and time dimension.</p><p>This is the motivation of <code>Space Time Coding (STC)</code>.</p><p>Maybe there is someone still confused by the difference between multiple transmit antennas and multiple receive antennas to achieve diversity. What causes this is that <code>channel state information  (CSI)</code> can be estimated at the receiver easily by kinds of channel estimation algorithms while CSI is not available at transmitter side in most cases.</p><p>It is easy to see that if we know CSI at transmitter side, let’s say $h_i=\alpha_i\cdot e^{j\theta}$, We can multiply the symbol from i-th antenna with $e^{-j\theta}$ and a normalisation factor which matters little. After propagating across the multiple paths, different version of transmitted symbol are co-phased. By elaborately choosing the normalised factor, the same performance of receive diversity with MRC can be achieved.</p><h4 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h4><blockquote id="fn_1"><sup>1</sup>. 《Wireless Communication》 Section 7.3  <a href="#reffn_1" title="Jump back to footnote [1] in the text."> &#8617;</a></blockquote><blockquote id="fn_2"><sup>2</sup>. MIMO Systems and Transmit Diversity<a href="#reffn_2" title="Jump back to footnote [2] in the text."> &#8617;</a></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> MIMO </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> divversity </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>English Words 1</title>
       <link href="//ewd1.html"/>
       <url>//ewd1.html</url>
